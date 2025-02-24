@@ -9,4 +9,54 @@ body {
     min-height: 100vh;
 }
 
-@layer components {}
+@media (max-width: 768px) {
+    .header {
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+    }
+
+    .search-form {
+        width: 100%;
+    }
+
+    .search-input {
+        width: 100%;
+    }
+
+
+}
+
+@layer components {
+    .search-input {
+        @apply block w-80 rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500;
+    }
+
+    .btn {
+        @apply inline-flex items-center rounded-lg border border-amber-700 bg-amber-700 px-3 py-2.5 font-medium text-white hover:bg-amber-800 focus:outline-none focus:ring-4 focus:ring-amber-300 dark:bg-amber-600 dark:hover:bg-amber-700 dark:focus:ring-amber-800;
+    }
+
+    .card {
+        @apply mr-auto place-self-center lg:col-span-6;
+    }
+
+    .card-title {
+        @apply mb-4 max-w-2xl text-4xl font-extrabold leading-none tracking-tight md:text-5xl xl:text-6xl dark:text-white;
+    }
+
+    .card-content {
+        @apply mb-6 max-w-2xl font-light text-gray-500 md:text-lg lg:mb-8 lg:text-xl dark:text-gray-400;
+    }
+
+    .toggle {
+        @apply relative h-6 w-11 rounded-full bg-gray-200 after:absolute after:start-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-amber-600 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-amber-300 rtl:peer-checked:after:-translate-x-full dark:border-gray-600 dark:bg-gray-700 dark:peer-checked:bg-amber-600 dark:peer-focus:ring-amber-800
+    }
+
+    .header {
+        @apply mx-auto flex justify-between p-6;
+    }
+
+    .footer {
+        @apply container mx-auto flex justify-center p-6;
+    }
+}
