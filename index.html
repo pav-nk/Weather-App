@@ -33,6 +33,7 @@
           id="voice-search"
           class="search-input"
           placeholder="Enter your city..."
+          name="search"
           min="2"
           max="50"
           required
@@ -83,28 +84,42 @@
         id="card-wrapper"
       >
         <div class="card">
-          <h1 class="card-title">Moscow, <span>-8 °C</span></h1>
+          <h1 class="mb-4">
+            <span
+              id="card-city"
+              class="text-6xl font-bold capitalize text-white"
+            ></span
+            ><span id="card-temp" class="text-6xl font-bold text-white"></span>
+          </h1>
           <div class="card-content">
-            <p class="mb-2">From checkout to global sales tax compliance.</p>
+            <p class="mb-2" id="card-description"></p>
             <ul
               class="max-w-md list-inside list-disc space-y-1 text-gray-500 dark:text-gray-400"
             >
-              <li>At least 10 characters</li>
-              <li>At least one lowercase character</li>
-              <li>Inclusion of at least one special character</li>
+              <li>Time zone: <span id="card-timezone"></span></li>
+              <li>Feels like: <span id="card-feelslike"></span></li>
+              <li>Wind speed: <span id="card-windspeed"></span></li>
+              <li>
+                Latitude / Longitude: <span id="card-latitude-longitude"></span>
+              </li>
             </ul>
           </div>
           <label class="inline-flex cursor-pointer items-center">
-            <input type="checkbox" value="" class="peer sr-only" />
+            <input
+              type="checkbox"
+              value=""
+              class="peer sr-only"
+              id="toggle-checkbox"
+            />
             <div class="toggle"></div>
             <span class="ms-3 text-lg text-gray-900 dark:text-gray-300"
-              >Celsius °C / Fahrenheit °F</span
+              >Fahrenheit °F / Celsius °C</span
             >
           </label>
         </div>
         <div class="hidden lg:col-span-6 lg:mt-0 lg:flex">
           <img
-            id="weather-img"
+            id="weather-image"
             src="./src/images/fog-day.svg"
             alt="weather image"
           />
